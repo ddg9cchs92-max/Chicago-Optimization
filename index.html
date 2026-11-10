@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CHICAGO OPTIMIZATION — оптимизация Windows и игровые твики</title>
+<meta name="description" content="CHICAGO OPTIMIZATION: 30+ твиков Windows, настройка под ваш ПК, откат изменений и ИИ-помощник CHICAGO AI. Тарифы от 50 ₽.">
+<meta property="og:title" content="CHICAGO OPTIMIZATION"><meta property="og:description" content="Комплексная настройка Windows и игровые твики. Новогодние скидки на тарифы."><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+@property --v{syntax:"<number>";inherits:false;initial-value:0}
+:root{--bg:#050506;--pn:#0d0d10;--ln:#25252c;--red:#e4162b;--r2:#ff3b4e;--sv:#c9ced8;--mu:#8d93a0;--gd:#f4c36a;--tx:#f3f4f7;--hd:Unbounded,system-ui,"Segoe UI",Arial,sans-serif;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px));height:100%}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,"Segoe UI",Roboto,Arial,sans-serif;overflow-x:hidden;min-height:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:75;background:#050506}
+:focus-visible{outline:2px solid var(--gd);outline-offset:3px}
+a{color:inherit}
+.wrap{max-width:1120px;margin:auto;padding:0 20px;position:relative;z-index:2}
+section{padding:90px 0;position:relative}
+h2{font:800 clamp(24px,4.6vw,42px)/1.12 var(--hd);margin:0 0 14px}
+h3{font:700 15px/1.3 var(--hd);margin:0 0 8px}
+.lead{color:var(--sv);max-width:62ch;margin:0 0 28px}.mu{color:var(--mu);font-size:14px}
+#snow{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+#pre{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;animation:pre .5s .9s forwards}
+.pl{font:800 22px var(--hd);letter-spacing:.14em;text-align:center}.pl small{display:block;font-size:11px;color:var(--mu);letter-spacing:.3em;margin-top:6px}
+.pl u{display:block;height:2px;margin-top:16px;background:linear-gradient(90deg,transparent,var(--red),transparent);animation:ld .9s ease-out}
+@keyframes pre{to{opacity:0;visibility:hidden}}@keyframes ld{from{transform:scaleX(0)}}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:70;background:rgba(5,5,6,.93);border-bottom:1px solid var(--ln)}
+.bar{display:flex;align-items:center;gap:10px;height:64px}
+.logo{font:800 17px var(--hd);letter-spacing:.08em;text-decoration:none;margin-right:auto;display:flex;align-items:center}
+.logo::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 14px var(--red);margin-right:10px}
+.menu{list-style:none;display:flex;gap:2px;margin:0;padding:0}
+.menu a{display:flex;align-items:center;gap:7px;padding:8px 12px;border-radius:9px;color:var(--sv);text-decoration:none;font-size:14px;transition:.2s}
+.menu a:hover{background:#17171d;color:#fff}.menu .dc{color:#fff;background:#5865f2}.menu .dc:hover{background:#6b77ff}
+svg.ic{width:18px;height:18px;fill:currentColor}
+.ib{width:40px;height:40px;border-radius:10px;border:1px solid var(--ln);background:#101014;color:var(--sv);cursor:pointer;font-size:16px}
+.ib[aria-pressed=false]{opacity:.45}#bg{display:none}
+.gar{position:absolute;left:0;right:0;bottom:-7px;display:flex;justify-content:space-around;pointer-events:none}
+.gar i{width:6px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 9px var(--c);animation:tw 2.4s infinite var(--d)}
+@keyframes tw{50%{opacity:.2}}
+.hero{min-height:calc(100svh - 64px);display:flex;align-items:center;overflow:hidden;padding:60px 0 90px}
+.g{position:absolute;border-radius:50%;filter:blur(90px);transform:translate3d(0,calc(var(--py,0)*1px),0)}
+.g1{width:560px;height:560px;left:-160px;top:-100px;background:rgba(228,22,43,.32)}.g2{width:460px;height:460px;right:-120px;bottom:-60px;background:rgba(244,195,106,.13)}
+.mark{display:inline-flex;gap:10px;align-items:center;font:700 clamp(14px,3.2vw,26px) var(--hd);letter-spacing:.16em;margin:0 0 22px;background:linear-gradient(90deg,#fff,#aab0bd,#fff);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 14px rgba(228,22,43,.5))}
+h1{font:700 clamp(20px,5.2vw,58px)/1.12 var(--hd);margin:0 0 20px;max-width:15em}
+h1 span{background:linear-gradient(90deg,var(--r2),#a40f20);-webkit-background-clip:text;background-clip:text;color:transparent;display:block}
+.sub{max-width:56ch;color:var(--sv);font-size:18px;margin:0 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 22px;border-radius:12px;font:700 12.5px var(--hd);letter-spacing:.05em;text-decoration:none;position:relative;overflow:hidden;border:1px solid var(--ln);background:#14141a;color:#fff;cursor:pointer;transition:transform .25s,box-shadow .25s}
+.btn.p{background:linear-gradient(135deg,#ff2a40,#a90f21);border-color:#ff5a68;box-shadow:0 10px 32px -10px rgba(228,22,43,.8)}
+.btn.d{background:#5865f2;border-color:#7b86ff}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.34) 50%,transparent 70%);transform:translateX(-130%)}
+.btn:hover{transform:translateY(-2px)}.btn:hover::after{transform:translateX(130%);transition:transform .7s}
+.trees{position:absolute;right:2%;bottom:0;display:flex;align-items:flex-end;pointer-events:none;z-index:1}
+.trees svg{height:min(52vh,380px);width:auto}.trees svg+svg{height:min(32vh,230px);margin-left:-30px}
+.l{animation:tw 2s infinite}
+.card{background:linear-gradient(180deg,#111116,#0a0a0d);border:1px solid var(--ln);border-radius:16px;padding:18px;transition:border-color .25s,box-shadow .25s}
+.card:hover{border-color:#5b1a22;box-shadow:0 0 36px -12px rgba(228,22,43,.55)}
+.tools{display:grid;gap:12px;margin-bottom:14px}
+#q{width:100%;padding:13px 16px;border-radius:12px;border:1px solid var(--ln);background:#0c0c10;color:#fff;font:inherit}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:8px 14px;border-radius:99px;border:1px solid var(--ln);background:#0d0d11;color:var(--sv);cursor:pointer;font:inherit;font-size:14px}
+.chip[aria-pressed=true]{background:var(--red);border-color:var(--r2);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin:14px 0 36px}
+.tw p{margin:0 0 8px;color:var(--sv);font-size:14.5px}.tw .res{color:#fff;font-size:13.5px;border-top:1px solid var(--ln);padding-top:9px;margin:10px 0 0}
+.tag{font-style:normal;font-size:12px;color:var(--gd);display:block;margin-bottom:6px}
+.rb ol{margin:10px 0 0;padding-left:20px;color:var(--sv)}.rb{border-color:#4a1a20}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;list-style:none;padding:0;margin:0 0 40px}
+.feat li{padding:12px 14px 12px 40px;position:relative;border:1px solid var(--ln);border-radius:12px;background:#0b0b0e}
+.feat li::before{content:"✓";position:absolute;left:14px;color:var(--r2);font-weight:700}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:start}
+.about blockquote{margin:0;font:600 clamp(17px,2.4vw,23px)/1.45 var(--hd);border-left:3px solid var(--red);padding-left:18px}
+.pts{display:flex;flex-wrap:wrap;gap:8px}.pts span{padding:8px 13px;border:1px solid var(--ln);border-radius:99px;font-size:14px;color:var(--sv)}
+.demo{display:inline-block;font:700 11px var(--hd);color:var(--gd);border:1px solid var(--gd);border-radius:6px;padding:3px 8px;vertical-align:middle;margin-left:10px}
+.rings{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin:22px 0}
+.rg{text-align:center}
+.ring{position:relative;width:104px;aspect-ratio:1;border-radius:50%;margin:0 auto 10px;display:grid;place-items:center;background:conic-gradient(var(--r2) calc(var(--v)*1%),#1b1b22 0);transition:--v .9s linear}
+.ring::before{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--pn)}.ring b{position:relative;font:700 15px var(--hd)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+canvas.gr{width:100%;height:auto;display:block;border-radius:10px;background:#09090c}
+.bar2{height:12px;border-radius:9px;background:#1b1b22;overflow:hidden;margin:10px 0}.bar2 i{display:block;height:100%;width:0;background:linear-gradient(90deg,#a40f20,var(--r2));transition:width .9s}
+.st{font-size:13px;color:#7fe0a0}.st.w{color:var(--gd)}
+#rec{margin:12px 0 0;padding-left:20px;color:var(--sv);font-size:14.5px}
+.chat{display:flex;flex-direction:column;height:min(70svh,560px)}
+#log{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.m{max-width:88%;padding:10px 14px;border-radius:14px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px}
+.m.u{align-self:flex-end;background:linear-gradient(135deg,#c1121f,#7d0b16)}.m.a{background:#16161c;border:1px solid var(--ln)}
+.qk{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;border-top:1px solid var(--ln)}.qk .chip{white-space:nowrap}
+.inp{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--ln)}.inp input{flex:1;min-width:0;padding:12px 14px;border-radius:10px;border:1px solid var(--ln);background:#0c0c10;color:#fff;font:inherit}
+.tf{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch;margin-top:26px}
+.tf .card{padding:26px;display:flex;flex-direction:column;position:relative}
+.tf .best{border-color:var(--r2);background:linear-gradient(180deg,#240a0e,#0b0709);box-shadow:0 0 60px -14px rgba(228,22,43,.75);transform:translateY(-10px)}
+.rib{position:absolute;top:-13px;left:22px;background:var(--gd);color:#1a1200;font:800 11px var(--hd);padding:6px 11px;border-radius:7px}
+.old{color:var(--mu);text-decoration:line-through;font-size:17px}.nw{font:800 44px/1.1 var(--hd)}.nw small{font-size:20px}
+.off{display:inline-block;background:var(--red);font:700 12px var(--hd);padding:5px 9px;border-radius:7px;margin-left:8px}
+.sv{color:var(--gd);font-size:14px;margin:6px 0 16px}
+.tf ul{list-style:none;padding:0;margin:0 0 22px;flex:1;color:var(--sv);font-size:14.5px}.tf li{padding:5px 0 5px 22px;position:relative}.tf li::before{content:"✓";position:absolute;left:0;color:var(--r2)}
+.dcb{margin-top:36px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;background:linear-gradient(120deg,#1a1c3c,#0b0b12);border-color:#3a3f9c}
+.dcb svg{width:46px;height:46px;fill:#fff}.dcb h2{font-size:clamp(20px,3vw,28px);margin:0 0 6px}
+details{border:1px solid var(--ln);border-radius:12px;background:#0b0b0e;margin-bottom:10px;padding:14px 16px}
+summary{cursor:pointer;font-weight:600}details p{color:var(--sv);margin:10px 0 0}
+footer{padding:36px 0 50px;border-top:1px solid var(--ln);color:var(--mu);font-size:14px}footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+html.nofx #snow,html.nofx .trees,html.nofx .gar,html.nofx .g{display:none}
+@media(max-width:940px){
+#bg{display:block}
+.menu{position:fixed;top:0;right:0;bottom:0;width:min(82vw,320px);flex-direction:column;padding:calc(76px + env(safe-area-inset-top,0px)) 16px 20px;background:#0a0a0d;border-left:1px solid var(--ln);transform:translateX(105%);transition:transform .3s;z-index:80}
+.menu.open{transform:none}#bg{position:relative;z-index:90}
+.menu a{padding:13px 14px;font-size:16px}
+.tf,.two,.about{grid-template-columns:1fr}.tf .best{transform:none}
+.trees svg{opacity:.4;height:230px}.trees svg+svg{height:140px}
+section{padding:64px 0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+<noscript><style>.rv{opacity:1;transform:none}#pre{display:none}</style></noscript>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="dsc" viewBox="0 0 24 24"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.1 14.1 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></symbol></svg>
+<div id="pre"><div class="pl">CHICAGO<small>OPTIMIZATION</small><u></u></div></div>
+<canvas id="snow" aria-hidden="true"></canvas>
+<header>
+<div class="bar wrap">
+<a class="logo" href="#top">CHICAGO</a>
+<nav aria-label="Основная навигация"><ul class="menu" id="menu">
+<li><a href="#top">Главная</a></li><li><a href="#optimization">Оптимизация</a></li><li><a href="#features">Возможности</a></li><li><a href="#monitor">PC Monitor</a></li><li><a href="#ai">CHICAGO AI</a></li><li><a href="#buy">Купить</a></li>
+<li><a class="dc" href="https://discord.gg/EfFbgZ5yBn" target="_blank" rel="noopener noreferrer"><svg class="ic"><use href="#dsc"/></svg>Discord</a></li>
+</ul></nav>
+<button class="ib" id="fx" aria-pressed="true" aria-label="Праздничные эффекты" title="Праздничные эффекты">❄</button>
+<button class="ib" id="bg" aria-expanded="false" aria-controls="menu" aria-label="Меню">☰</button>
+</div>
+<div class="gar" id="gar" aria-hidden="true"></div>
+</header>
+<main id="top">
+<section class="hero">
+<div class="g g1"></div><div class="g g2"></div>
+<div class="wrap">
+<p class="mark">❄ CHICAGO OPTIMIZATION</p>
+<h1>ТВОЙ ПК.<br>ТВОИ ПРАВИЛА.<span>МАКСИМАЛЬНАЯ ПРОИЗВОДИТЕЛЬНОСТЬ.</span></h1>
+<p class="sub">CHICAGO OPTIMIZATION — комплексные настройки Windows и игровые твики для более комфортной работы и игры на твоём компьютере.</p>
+<div class="cta"><a class="btn p" href="#optimization">НАЧАТЬ ОПТИМИЗАЦИЮ</a><a class="btn" href="#buy">ВЫБРАТЬ ТАРИФ</a></div>
+</div>
+<div class="trees" id="trees" aria-hidden="true"></div>
+</section>
+
+<section id="optimization"><div class="wrap">
+<h2>Наша оптимизация</h2>
+<p class="lead">Более 30 твиков для Windows, игр, процессора, видеокарты и памяти. Результат зависит от конфигурации ПК: гарантированного прироста FPS мы не обещаем.</p>
+<div class="tools"><input id="q" type="search" placeholder="Поиск твика по названию" aria-label="Поиск твика"><div id="chips" class="chips"></div></div>
+<p id="cnt" class="mu" aria-live="polite"></p>
+<div id="grid" class="grid"></div>
+<div class="card rb rv"><h3>ВЕРНУТЬ ПРЕЖНИЕ НАСТРОЙКИ</h3>
+<p class="mu" style="margin:0">Все изменения безопасны и по возможности обратимы:</p>
+<ol><li>Перед серьёзными изменениями создаётся точка восстановления или резервная копия настроек.</li><li>Любой применённый твик можно отменить.</li><li>Функция «ВЕРНУТЬ ПРЕЖНИЕ НАСТРОЙКИ» восстанавливает исходную конфигурацию.</li></ol></div>
+</div></section>
+
+<section id="features"><div class="wrap">
+<h2>Возможности</h2>
+<ul class="feat rv">
+<li>Более 30 различных твиков</li><li>Индивидуальная настройка Windows</li><li>Оптимизация игровых параметров</li><li>Настройка под характеристики вашего ПК</li><li>Настройка автозагрузки</li><li>Анализ фоновых процессов</li><li>Настройка параметров производительности</li><li>Оптимизация игровых конфигураций</li><li>Рекомендации по устранению микрофризов</li><li>Персональные рекомендации по работе ПК</li>
+</ul>
+<h2>О нас</h2>
+<div class="about rv">
+<blockquote>Мы хотим, чтобы каждый пользователь мог получить максимум от своего компьютера без необходимости самостоятельно разбираться в десятках системных параметров.</blockquote>
+<div><p class="lead" style="margin-bottom:16px">Мы занимаемся настройкой и оптимизацией компьютеров, созданием твиков и подбором индивидуальных параметров Windows.</p>
+<div class="pts"><span>30+ твиков</span><span>Индивидуальный подход</span><span>Откат изменений</span><span>Постоянное развитие</span><span>Удобство использования</span><span>Поддержка пользователей</span></div></div>
+</div>
+</div></section>
+
+<section id="monitor"><div class="wrap">
+<h2>PC Monitor<span class="demo">ДЕМО</span></h2>
+<p class="lead">Браузер не читает системную телеметрию Windows. Значения ниже — демонстрация интерфейса, а не показатели вашего ПК. Реальные данные появятся после подключения Windows-агента с вашего согласия.</p>
+<div class="rings card" id="rings"></div>
+<div class="two">
+<div class="card"><h3>Нагрузка CPU и GPU <span class="demo">ДЕМО</span></h3><canvas class="gr" id="g1" width="600" height="170"></canvas><p class="mu" style="margin:8px 0 0"><span style="color:#ff3b4e">●</span> CPU &nbsp; <span style="color:#c9ced8">●</span> GPU</p></div>
+<div class="card"><h3>SMART RAM <span class="demo">ДЕМО</span></h3>
+<p id="rt" style="margin:0">—</p><div class="bar2"><i id="rb"></i></div><p class="st" id="rs"></p>
+<canvas class="gr" id="g2" width="600" height="110"></canvas>
+<p style="margin:14px 0 0"><button class="btn p" id="opt" type="button">ОПТИМИЗИРОВАТЬ ПАМЯТЬ</button></p>
+<ul id="rec" aria-live="polite"></ul></div>
+</div>
+</div></section>
+
+<section id="ai"><div class="wrap">
+<h2>CHICAGO AI</h2>
+<p class="lead">Помощник по оптимизации: FPS, фризы, нагрузка и настройки Windows. Ответы генерирует языковая модель, а не заготовленные шаблоны.</p>
+<div class="card chat" style="padding:0">
+<div id="log" role="log" aria-live="polite"><div class="m a">Привет! Я CHICAGO AI. Расскажи о своём ПК (процессор, видеокарта, ОЗУ, игры) или выбери вопрос ниже.</div></div>
+<div class="qk" id="qk"></div>
+<div class="inp"><input id="ti" type="text" placeholder="Спросите про FPS, фризы, Windows…" aria-label="Сообщение"><button class="btn p" id="send" type="button">ОТПРАВИТЬ</button></div>
+</div>
+</div></section>
+
+<section id="buy"><div class="wrap">
+<h2>Купить</h2>
+<p class="lead">Новогодние скидки на все тарифы. Оплата и выдача доступа оформляются в нашем Discord.</p>
+<div class="tf" id="tf"></div>
+<div class="card dcb rv"><div style="display:flex;gap:18px;align-items:center"><a href="https://discord.gg/EfFbgZ5yBn" target="_blank" rel="noopener noreferrer" aria-label="Discord"><svg class="ic"><use href="#dsc"/></svg></a><div><h2>ОСТАЛИСЬ ВОПРОСЫ?</h2><p class="lead" style="margin:0">Присоединяйся к нашему Discord, чтобы получить помощь, узнать подробности и оформить покупку.</p></div></div>
+<a class="btn d" href="https://discord.gg/EfFbgZ5yBn" target="_blank" rel="noopener noreferrer">ПЕРЕЙТИ В DISCORD</a></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<h2>FAQ</h2>
+<details><summary>Как работает оптимизация?</summary><p>Подбираются безопасные параметры Windows и игр под ваш ПК: автозагрузка, фоновые процессы, электропитание, игровые настройки.</p></details>
+<details><summary>Можно ли вернуть настройки?</summary><p>Да. Перед серьёзными изменениями создаётся точка восстановления или копия настроек, а применённые твики можно отменить.</p></details>
+<details><summary>Подходит ли оптимизация для слабых ПК?</summary><p>Да, настройки подбираются под характеристики компьютера. Размер эффекта зависит от железа, гарантировать прирост FPS нельзя.</p></details>
+<details><summary>Как приобрести доступ?</summary><p>Выберите тариф и нажмите кнопку покупки — откроется наш Discord, где оформляется заказ.</p></details>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© CHICAGO OPTIMIZATION. Windows — товарный знак Microsoft; проект с Microsoft не связан.</span><a href="https://discord.gg/EfFbgZ5yBn" target="_blank" rel="noopener noreferrer">Discord</a></div></footer>
+
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},DC="https://discord.gg/EfFbgZ5yBn";
+var ls={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+var rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+/* garland + trees */
+var cols=["#ff2a40","#f4c36a","#c9ced8","#fff"],g=$("#gar"),h="";
+for(var i=0;i<34;i++)h+='<i style="--c:'+cols[i%4]+';--d:'+(i%7*.3)+'s"></i>';g.innerHTML=h;
+function tree(){var s='<svg viewBox="0 0 200 300"><g fill="#0a110e" stroke="rgba(255,255,255,.1)"><polygon points="100,8 52,100 148,100"/><polygon points="100,60 38,170 162,170"/><polygon points="100,120 24,250 176,250"/><rect x="90" y="250" width="20" height="38"/></g><polygon fill="#f4c36a" points="100,0 104,10 114,10 106,16 109,26 100,20 91,26 94,16 86,10 96,10"/>';
+for(var i=0;i<26;i++){var y=32+i*8.4,w=Math.min((y-8)*.33,80),x=100+Math.sin(i*1.9)*w*.82;s+='<circle class="l" cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="3" fill="'+cols[i%4]+'" style="animation-delay:'+(i%6*.35)+'s"/>'}
+return s+'</svg>'}
+$("#trees").innerHTML=tree()+tree();
+
+/* snow */
+var cv=$("#snow"),cx=cv.getContext("2d"),W,H,F=[],raf=0;
+function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;F=[];var n=W<700?70:140;for(var i=0;i<n;i++){var d=Math.random();F.push({x:Math.random()*W,y:Math.random()*H,r:.6+d*2.4,v:.25+d*1.1,s:Math.random()*6.28,a:.25+d*.65,d:d})}}
+function tick(){cx.clearRect(0,0,W,H);cx.fillStyle="#fff";for(var i=0;i<F.length;i++){var f=F[i];f.y+=f.v;f.s+=.01;f.x+=Math.sin(f.s)*.4*f.d+.15;if(f.y>H+5){f.y=-5;f.x=Math.random()*W}if(f.x>W+5)f.x=-5;cx.globalAlpha=f.a;cx.beginPath();cx.arc(f.x,f.y,f.r,0,6.283);cx.fill()}raf=requestAnimationFrame(tick)}
+var fxb=$("#fx");
+function setFx(on){document.documentElement.classList.toggle("nofx",!on);fxb.setAttribute("aria-pressed",on);cancelAnimationFrame(raf);raf=0;cx.clearRect(0,0,W,H);if(on&&!rm)tick();ls.set("fx",on?"1":"0")}
+size();addEventListener("resize",size);
+fxb.onclick=function(){setFx(fxb.getAttribute("aria-pressed")!=="true")};
+var st=ls.get("fx");setFx(st===null?!rm:st==="1");
+var pyT=0;addEventListener("scroll",function(){if(pyT)return;pyT=requestAnimationFrame(function(){pyT=0;document.documentElement.style.setProperty("--py",(scrollY*.18).toFixed(1))})},{passive:true});
+
+/* menu */
+var mn=$("#menu"),bg=$("#bg");
+bg.onclick=function(){var o=mn.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
+mn.onclick=function(e){if(e.target.closest("a")){mn.classList.remove("open");bg.setAttribute("aria-expanded","false")}};
+
+/* reveal */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+function rv(){document.querySelectorAll(".rv:not(.in)").forEach(function(n){io.observe(n)})}
+
+/* tweaks */
+var CAT={W:"Windows",G:"Игры",C:"Процессор",V:"Видеокарта",R:"ОЗУ",S:"Система",T:"Дополнительные инструменты"};
+var TW=("W|Режим игры Windows|Включает Game Mode и приоритет для игры|Меньше фоновых помех во время игры\n"+
+"W|Фоновые приложения|Отключает ненужные фоновые приложения|Меньше нагрузки на ЦП и ОЗУ\n"+
+"W|Визуальные эффекты|Убирает анимации и прозрачность|Интерфейс отзывчивее на слабых ПК\n"+
+"W|Автозагрузка|Находит и отключает лишнее при старте|Быстрее запуск Windows\n"+
+"W|Фоновая запись Xbox|Отключает запись клипов в фоне|Меньше скрытой нагрузки в играх\n"+
+"W|Советы и реклама|Отключает рекомендации и всплывающие подсказки|Меньше отвлечений и фоновых задач\n"+
+"W|Уведомления в играх|Включает режим фокусировки на время игры|Ничто не сворачивает игру\n"+
+"G|Полноэкранные оптимизации|Настраивает режим запуска для выбранных игр|Может стабилизировать время кадра\n"+
+"G|Приоритет процесса игры|Умеренно повышает приоритет игры|Меньше просадок при высокой нагрузке\n"+
+"G|Конфиги игр|Подбирает параметры под конкретную игру|Баланс картинки и FPS\n"+
+"G|Кэш шейдеров|Проверяет размер и чистит по запросу|Может уменьшить подгрузки и микрофризы\n"+
+"G|Ускорение мыши|Отключает повышенную точность указателя|Предсказуемое наведение\n"+
+"G|Настройки популярных игр|Рекомендации по графике и FPS|Понятные шаги для каждой игры\n"+
+"C|План электропитания|Включает высокую производительность|Стабильнее частоты процессора\n"+
+"C|Парковка ядер|Настраивает минимальное число активных ядер|Меньше задержек отклика\n"+
+"C|Минимальное состояние ЦП|Повышает нижнюю границу частоты|Быстрее реакция под нагрузкой\n"+
+"C|Задачи обслуживания|Переносит их на время простоя|Меньше пиков во время игры\n"+
+"C|Службы Windows|Предлагает ручной запуск для лишних служб|Меньше фоновых процессов\n"+
+"V|Планирование GPU|Включает аппаратное планирование при поддержке|Возможное снижение задержки\n"+
+"V|Профиль драйвера|Рекомендации для NVIDIA и AMD|Баланс задержки и качества\n"+
+"V|Выбор видеокарты|Назначает дискретную карту игре|Игра не запускается на встроенной графике\n"+
+"V|Вертикальная синхронизация|Советует режим V-Sync и G-Sync|Меньше разрывов без лишней задержки\n"+
+"V|Режим питания GPU|Максимальная производительность в профиле|Стабильнее частоты в играх\n"+
+"R|Файл подкачки|Подбирает размер под объём ОЗУ|Меньше зависаний при нехватке памяти\n"+
+"R|Сжатие памяти|Проверяет и настраивает параметр|Баланс между ОЗУ и нагрузкой на ЦП\n"+
+"R|Процессы в памяти|Показывает, что занимает ОЗУ|Видно, что съедает память\n"+
+"R|SMART RAM|Следит за ОЗУ в долгих сессиях|Предупреждение до начала зависаний\n"+
+"S|Точка восстановления|Создаётся перед серьёзными изменениями|Возврат одним действием\n"+
+"S|Временные файлы|Удаляет только временные файлы|Освобождает место на диске\n"+
+"S|Проверка SSD и TRIM|Проверяет состояние и включённый TRIM|Стабильная скорость диска\n"+
+"T|Анализ фоновых процессов|Находит тяжёлые процессы|Понятно, что мешает\n"+
+"T|Диагностика микрофризов|Пошаговая проверка причин|Находит источник фризов\n"+
+"T|Персональные рекомендации|Советы под конфигурацию ПК|Настройки под ваше железо\n"+
+"T|Резервная копия настроек|Сохраняет исходные параметры|Возврат к исходной конфигурации").split("\n").map(function(l){return l.split("|")});
+var cat="all",ch=$("#chips"),gd=$("#grid");
+ch.innerHTML='<button class="chip" aria-pressed="true" data-c="all">Все</button>'+Object.keys(CAT).map(function(k){return '<button class="chip" aria-pressed="false" data-c="'+k+'">'+CAT[k]+'</button>'}).join("");
+function draw(){var q=$("#q").value.trim().toLowerCase(),n=0,o="";
+TW.forEach(function(t){if((cat==="all"||t[0]===cat)&&(!q||(t[1]+" "+t[2]).toLowerCase().indexOf(q)>-1)){n++;o+='<article class="card tw"><i class="tag">'+CAT[t[0]]+'</i><h3>'+t[1]+'</h3><p>'+t[2]+'.</p><p class="res">Результат: '+t[3].charAt(0).toLowerCase()+t[3].slice(1)+'</p></article>'}});
+gd.innerHTML=o||'<p class="mu">Ничего не найдено. Измените запрос или выберите «Все».</p>';$("#cnt").textContent="Показано "+n+" из "+TW.length}
+ch.onclick=function(e){var b=e.target.closest("button");if(!b)return;cat=b.dataset.c;ch.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});draw()};
+$("#q").oninput=draw;draw();
+
+/* pricing */
+var T=[["7 ДНЕЙ",200,50,["Доступ к оптимизации на 7 дней","Более 30 твиков","Базовые настройки Windows","Игровые настройки","Поддержка"]],
+["30 ДНЕЙ",400,200,["Полный доступ на 30 дней","Более 30 твиков","Расширенная оптимизация Windows","Игровые настройки","Индивидуальные рекомендации","Поддержка"]],
+["НАВСЕГДА",1200,500,["Бессрочный доступ","Все доступные твики","Полная оптимизация","Будущие обновления продукта, если они предусмотрены","Поддержка","Персональные рекомендации"]]];
+$("#tf").innerHTML=T.map(function(t,i){return '<div class="card rv'+(i==2?' best':'')+'">'+(i==2?'<span class="rib">САМОЕ ВЫГОДНОЕ</span>':'')+'<h3>'+t[0]+'</h3><div><span class="old">'+t[1]+' ₽</span><span class="off">−'+Math.round((1-t[2]/t[1])*100)+'%</span></div><div class="nw"><span class="cn" data-v="'+t[2]+'">'+t[2]+'</span> <small>₽</small></div><p class="sv">Выгода: '+(t[1]-t[2])+' ₽ — новогодняя скидка</p><ul>'+t[3].map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul><a class="btn '+(i==2?'p':'d')+'" href="'+DC+'" target="_blank" rel="noopener noreferrer"><svg class="ic"><use href="#dsc"/></svg>КУПИТЬ В DISCORD</a></div>'}).join("");
+var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io2.unobserve(e.target);var el=e.target,v=+el.dataset.v,t0=performance.now();if(rm)return;(function f(t){var p=Math.min((t-t0)/900,1);el.textContent=Math.round(v*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)})},{threshold:.6});
+document.querySelectorAll(".cn").forEach(function(n){io2.observe(n)});rv();
+
+/* monitor demo */
+var M=[["CPU",35],["GPU",48],["ОЗУ",52],["Диск",22],["Темп.",52]],hist=[[],[],[]],TOT=16,t0=Date.now();
+var rg=$("#rings");rg.innerHTML=M.map(function(m,i){return '<div class="rg"><div class="ring" id="r'+i+'"><b></b></div><span class="mu">'+m[0]+'</span></div>'}).join("")+'<div class="rg"><div class="ring" style="--v:100"><b id="up" style="font-size:12px">00:00:00</b></div><span class="mu">Аптайм (демо)</span></div>';
+function wk(v,a,b,s){return Math.max(a,Math.min(b,v+(Math.random()-.5)*s))}
+function spark(id,ss,cs){var c=$(id),x=c.getContext("2d"),w=c.width,hh=c.height;x.clearRect(0,0,w,hh);x.strokeStyle="#1f1f26";x.lineWidth=1;for(var k=1;k<4;k++){x.beginPath();x.moveTo(0,hh*k/4);x.lineTo(w,hh*k/4);x.stroke()}
+ss.forEach(function(s,j){x.strokeStyle=cs[j];x.lineWidth=2.2;x.beginPath();s.forEach(function(v,i){var px=i/59*w,py=hh-v/100*(hh-6)-3;i?x.lineTo(px,py):x.moveTo(px,py)});x.stroke()})}
+function step(){M[0][1]=wk(M[0][1],5,95,16);M[1][1]=wk(M[1][1],5,98,14);M[2][1]=wk(M[2][1],25,96,6);M[3][1]=wk(M[3][1],2,90,10);M[4][1]=wk(M[4][1],36,82,4);
+M.forEach(function(m,i){var r=$("#r"+i);r.style.setProperty("--v",m[1]);r.firstChild.textContent=Math.round(m[1])+(i==4?"°":"%")});
+[M[0][1],M[1][1],M[2][1]].forEach(function(v,i){hist[i].push(v);if(hist[i].length>60)hist[i].shift()});
+spark("#g1",[hist[0],hist[1]],["#ff3b4e","#c9ced8"]);spark("#g2",[hist[2]],["#f4c36a"]);
+var u=M[2][1]/100*TOT;$("#rt").textContent="Занято "+u.toFixed(1)+" ГБ · свободно "+(TOT-u).toFixed(1)+" ГБ из "+TOT+" ГБ (демо)";$("#rb").style.width=M[2][1]+"%";
+var s=$("#rs"),hi=M[2][1]>85;s.textContent=hi?"Высокая нагрузка на память":"Нагрузка в норме";s.className="st"+(hi?" w":"");
+var d=Math.floor((Date.now()-t0)/1000);$("#up").textContent=[d/3600,d/60%60,d%60].map(function(n){n=Math.floor(n);return n<10?"0"+n:n}).join(":")}
+step();setInterval(step,1000);
+$("#opt").onclick=function(){var p=M[2][1],r=["Состояние памяти проверено (демо): занято "+Math.round(p)+"%."];
+if(p>85)r.push("Нагрузка высокая: закройте неиспользуемые программы и вкладки браузера.");else r.push("Критичной нагрузки нет, срочные действия не нужны.");
+r.push("Проверьте автозагрузку и фоновые процессы — они часто держат память.");r.push("Если ОЗУ в игре растёт без остановки, перезапустите игру между сессиями.");r.push("Реальную проверку и действия выполнит Windows-агент. Процессы не завершаются без вашего подтверждения.");
+$("#rec").innerHTML=r.map(function(x){return "<li>"+x+"</li>"}).join("")};
+
+/* AI chat */
+var SYS="Ты — CHICAGO AI, помощник по оптимизации Windows и ПК. Отвечай по-русски, понятно и по делу, до 150 слов, без воды. Не обещай гарантированный прирост FPS. Советуй только безопасные обратимые действия и напоминай о точке восстановления перед серьёзными изменениями. Если данных о ПК не хватает, задай 1–2 уточняющих вопроса. Не придумывай характеристики пользователя.";
+var log=$("#log"),hs=[],busy=false;
+function msg(r,t){var d=document.createElement("div");d.className="m "+r;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+async function ask(q){q=q.trim();if(!q||busy)return;busy=true;$("#ti").value="";msg("u",q);var el=msg("a","Думаю…");
+try{var s=window.claude&&await window.claude.use("sample");
+if(!s){el.textContent="ИИ-сервер не подключён в этом просмотре. Для работы на своём домене нужен серверный API (ключи хранятся только на сервере).";return}
+var ctx=hs.slice(-8).map(function(m){return(m.r=="u"?"Пользователь: ":"CHICAGO AI: ")+m.t}).join("\n");
+var r=await s(SYS+"\n\n"+ctx+"\nПользователь: "+q+"\nCHICAGO AI:",{cache:false,onText:function(o){el.textContent=o.text;log.scrollTop=log.scrollHeight}});
+el.textContent=r.text;hs.push({r:"u",t:q},{r:"a",t:r.text})}
+catch(e){el.textContent=e&&e.code==="rate_limited"?"Слишком много запросов. Подождите минуту и повторите.":e&&e.code==="not_granted"?"Доступ к ИИ не разрешён. Разрешите его в настройках страницы и повторите.":"Не удалось получить ответ. Повторите запрос."}
+finally{busy=false}}
+$("#qk").innerHTML=["Проанализировать мой ПК","Почему низкий FPS?","Как уменьшить фризы?","Оптимизировать Windows","Проверить нагрузку"].map(function(x){return '<button class="chip" type="button">'+x+'</button>'}).join("");
+$("#qk").onclick=function(e){var b=e.target.closest("button");if(b)ask(b.textContent)};
+$("#send").onclick=function(){ask($("#ti").value)};$("#ti").onkeydown=function(e){if(e.key==="Enter")ask(this.value)};
+})();
+</script>
+</body>
+</html>
